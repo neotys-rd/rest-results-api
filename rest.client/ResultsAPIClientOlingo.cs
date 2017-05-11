@@ -89,13 +89,12 @@ namespace Neotys.ResultsAPI.Client
             {
                 return new BinaryData("", new byte[0]);
             }
-            IDictionary<string, object> properties = ResultsApiUtils.getDownloadReportProperties(downloadReportParams);
-            properties[ResultsApiUtils.API_KEY] = apiKey;
+            string jsonContent = "\"" + ResultsApiUtils.REPORT_ID + "\": \"" + downloadReportParams.ReportId + "\"";
             while (true)
             {
                 try
                 {
-                    return ReadBinary(ResultsApiUtils.DOWNLOAD_REPORT, properties);
+                    return ReadBinary(ResultsApiUtils.DOWNLOAD_REPORT, apiKey, jsonContent);
                 }
                 catch (NeotysAPIException neotysAPIException)
                 {
