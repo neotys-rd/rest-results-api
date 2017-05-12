@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{000000B5-0000-0000-0000-000000000000}</ProjectGuid>
+    <ProjectGuid>{412E7978-7857-448C-9015-784896336DD2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Neotys.ResultsAPI</RootNamespace>
@@ -132,6 +132,7 @@
     <Compile Include="rest.client\ResultsAPIClientFactory.cs" />
     <Compile Include="rest.client\ResultsAPIClientOlingo.cs" />
     <Compile Include="utils\ResultsApiUtils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
