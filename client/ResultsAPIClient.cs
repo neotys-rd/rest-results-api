@@ -37,5 +37,12 @@ namespace Neotys.ResultsAPI.Client
         /// <param name="destinationFolder">the destination folder when the generated report will be saved.</param>
         /// <returns>the absolute path of the report file</returns>
         string SaveReport(DownloadReportParams downloadReportParams, string destinationFolder);
+
+        /// <summary>
+        /// Update the quality status of a test
+        /// </summary>
+        /// <param name="updateQualityStatusParams">update parameters</param>
+        /// <returns>reportId</returns>
+        void UpdateQualityStatus(UpdateQualityStatusParams updateQualityStatusParams);
     }
 }

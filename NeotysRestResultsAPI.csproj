@@ -79,8 +79,8 @@
       <HintPath>packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NeotysRestCommonAPI, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\NeotysRestCommonAPI.1.0.2\lib\net40\NeotysRestCommonAPI.dll</HintPath>
+    <Reference Include="NeotysRestCommonAPI, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\NeotysRestCommonAPI.1.0.3\lib\net40\NeotysRestCommonAPI.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Simple.OData.Client.Net40, Version=4.16.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -129,6 +129,8 @@
     <Compile Include="model\Format.cs" />
     <Compile Include="model\GenerateReportParams.cs" />
     <Compile Include="model\GenerateReportParamsBuilder.cs" />
+    <Compile Include="model\UpdateQualityStatusParams.cs" />
+    <Compile Include="model\UpdateQualityStatusParamsBuilder.cs" />
     <Compile Include="rest.client\ResultsAPIClientFactory.cs" />
     <Compile Include="rest.client\ResultsAPIClientOlingo.cs" />
     <Compile Include="utils\ResultsApiUtils.cs" />

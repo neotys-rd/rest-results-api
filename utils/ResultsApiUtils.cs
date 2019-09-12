@@ -30,6 +30,10 @@ namespace Neotys.ResultsAPI.Utils
 	    public const string DOWNLOAD_REPORT = "DownloadReport";
 	    public const string REPORT_BINARY = "ReportBinary";
 
+        // UpdateQualityStatus
+        public const string UPDATE_QUALITY_STATUS = "UpdateQualityStatus";
+        public const string QUALITY_STATUS = "QualityStatus";
+
         private ResultsApiUtils()
         {
             throw new AccessViolationException();
@@ -64,6 +68,14 @@ namespace Neotys.ResultsAPI.Utils
                 return null;
             }
             return reportId.ToString();
+        }
+
+        public static IDictionary<string, object> getUpdateQualityStatusProperties(UpdateQualityStatusParams updateQualityStatusParams)
+        {
+            IDictionary<string, object> properties = new Dictionary<string, object>();
+            properties[TEST_RESULT_NAME] = updateQualityStatusParams.TestResultName;
+            properties[QUALITY_STATUS] = updateQualityStatusParams.QualityStatus;
+            return properties;
         }
     }
 }

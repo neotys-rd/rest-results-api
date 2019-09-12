@@ -115,6 +115,32 @@ namespace Neotys.ResultsAPI.Client
             }
         }
 
+        /// <summary>
+        /// Update the quality status of a test result. </summary>
+        /// <param name="updateQualityStatusParams"> </param>
+        /// <exception cref="ODataException"> </exception>
+        /// <exception cref="GeneralSecurityException"> </exception>
+        /// <exception cref="IOException"> </exception>
+        /// <exception cref="URISyntaxException"> </exception>
+        /// <exception cref="NeotysAPIException"> </exception>
+        public void UpdateQualityStatus(UpdateQualityStatusParams updateQualityStatusParams)
+        {
+            if (!Enabled)
+            {
+                return;
+            }
+            IDictionary<string, object> properties = ResultsApiUtils.getUpdateQualityStatusProperties(updateQualityStatusParams);
+            properties[ResultsApiUtils.API_KEY] = apiKey;
+            try
+            {
+                CreateEntity(ResultsApiUtils.UPDATE_QUALITY_STATUS, properties);
+            }
+            catch (Microsoft.OData.Core.ODataException oDataException)
+            {
+                throw new NeotysAPIException(oDataException);
+            }
+        }
+
         private bool isGenerationInProgressException(NeotysAPIException exception)
         {
             return NeotysAPIException.ErrorType.NL_API_ERROR.Equals(exception.getErrorType()) && exception.Details != null && exception.Details.Contains("in progress");
